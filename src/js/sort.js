@@ -3,7 +3,15 @@ const fn = (arrey, cash) => {
   for (let i = 1; i <= cash; i++) {
     queue[i] = 0;
   }
-  console.log(queue);
+
+  arrey.forEach(element => {
+    const values = Object.values(queue);
+    const minValue = Math.min(...values);
+    const currentCash = values.indexOf(minValue);
+    queue[currentCash + 1] += element;
+  });
+
+  return queue;
 };
 
-console.log(fn([12, 3, 5, 7, 11, 5], 2));
+export default fn;
