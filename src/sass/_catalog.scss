@@ -1,0 +1,15 @@
+
+
+.catalog-list {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    row-gap: 48px;
+    column-gap: 24px;
+    flex-wrap: wrap;
+}
+
+
+.catalog-item {
+    flex-basis: calc((100% - 48px) / 3);
+}
