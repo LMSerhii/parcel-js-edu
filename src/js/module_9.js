@@ -196,16 +196,55 @@
 //     console.log('Finally');
 //   });
 
-const sleep = ms => {
-  return new Promise(resolve => {
-    setTimeout(() => resolve(), ms);
+// const sleep = ms => {
+//   return new Promise(resolve => {
+//     setTimeout(() => resolve(), ms);
+//   });
+// };
+
+// // sleep(2000).then(() => console.log('After 2 seconds'));
+// // sleep(4000).then(() => console.log('After 4 seconds'));
+// // sleep(6000).then(() => console.log('After 6 seconds'));
+
+// Promise.all([sleep(2000), sleep(4000), sleep(6000)]).then(() => {
+//   console.log('Completed all promises');
+// });
+
+// function factorial(n) {
+//   if (n < 2) {
+//     return 1;
+//   }
+//   console.log(n);
+
+//   return n * factorial(n - 1);
+// }
+
+// console.log(factorial(100005));
+
+// function factorial(n) {
+//   let result = 1;
+//   for (let i = n; i > 1; i--) {
+//     result *= i;
+//   }
+//   return result;
+// }
+
+// console.log(factorial(5));
+
+console.log('1');
+
+setTimeout(() => {
+  console.log('2');
+}, 2000);
+
+setTimeout(() => {
+  Promise.resolve().then(() => {
+    console.log('3');
   });
-};
+}, 0);
 
-// sleep(2000).then(() => console.log('After 2 seconds'));
-// sleep(4000).then(() => console.log('After 4 seconds'));
-// sleep(6000).then(() => console.log('After 6 seconds'));
-
-Promise.all([sleep(2000), sleep(4000), sleep(6000)]).then(() => {
-  console.log('Completed all promises');
+Promise.resolve().then(() => {
+  console.log('4');
 });
+
+console.log('5');
