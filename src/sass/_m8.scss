@@ -1,0 +1,47 @@
+.catalog-list {    
+    li {
+        display: flex;
+        flex-direction:column;
+        
+        img {
+            flex-grow: 1;
+        }
+    }
+    padding: 20px;  
+    h2, img, p {
+        margin-bottom: 10px;
+    }
+}
+
+.basicLightbox {
+    align-items: flex-start;
+}
+
+.modal {
+    padding: 20px;
+    width: 400px;
+    height: 500px;
+
+    img, h2, h3, p {
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        span {
+            text-decoration: line-through;
+        }
+    }
+
+    ul {
+        li {
+            margin-bottom: 5px;
+        }
+        margin-bottom: 10px;
+    }
+
+    button {
+        padding: 10px;
+        color: black;
+    }
+
+}

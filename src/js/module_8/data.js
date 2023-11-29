@@ -3,7 +3,7 @@ export const items = [
     id: 1,
     title: 'Акумуляторний лобзик Dnipro-M DJS-200BC ULTRA (без АКБ та ЗП)',
     image_url:
-      'https://static.dnipro-m.ua/cache/products/5021/thumb_267644.jpg',
+      'https://static.dnipro-m.ua/cache/products/5021/catalog_origin_308475.jpg',
     rating: '4.73',
     price: '{"price_new":4299,"price_old":5385}',
     is_available: 'true',
@@ -25,7 +25,7 @@ export const items = [
     id: 3,
     title: 'Лобзик електричний Dnipro-M JS-100LX',
     image_url:
-      'https://static.dnipro-m.ua/cache/products/6502/thumb_257795.jpg',
+      'https://static.dnipro-m.ua/cache/products/6502/catalog_origin_308853.jpg',
     rating: '5.00',
     price: '{"price_new":2799,"price_old":3699}',
     is_available: 'true',
@@ -47,7 +47,7 @@ export const items = [
     id: 5,
     title: 'Лобзик електричний Dnipro-M JS-110SF',
     image_url:
-      'https://static.dnipro-m.ua/cache/products/2724/thumb_286907.jpg',
+      'https://static.dnipro-m.ua/cache/products/2724/catalog_origin_307349.jpg',
     rating: '4.76',
     price: '{"price_new":2190,"price_old":2190}',
     is_available: 'false',
@@ -58,7 +58,7 @@ export const items = [
     id: 6,
     title: 'Лобзик електричний Dnipro-M JS-110S',
     image_url:
-      'https://static.dnipro-m.ua/cache/products/1233/thumb_257756.jpg',
+      'https://static.dnipro-m.ua/cache/products/1233/catalog_origin_307300.jpg',
     rating: '4.46',
     price: '{"price_new":2499,"price_old":3498}',
     is_available: 'false',
