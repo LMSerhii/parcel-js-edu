@@ -1,15 +1,23 @@
 .catalog-list {    
     li {
-        display: flex;
-        flex-direction:column;
-        
-        img {
-            flex-grow: 1;
-        }
+        position: relative;
+        height: 100%;
     }
     padding: 20px;  
     h2, img, p {
         margin-bottom: 10px;
+    }
+    .js-close {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 5px;
+        right: 5px;
+        border: none;
+        border-radius: 50%;
     }
 }
 
@@ -43,5 +51,7 @@
         padding: 10px;
         color: black;
     }
+
+
 
 }
