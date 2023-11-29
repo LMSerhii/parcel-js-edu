@@ -1,19 +1,18 @@
 import * as basicLightbox from 'basiclightbox';
 
 import { items } from './module_8/data';
-
-const FAVORITE_KEY = 'favorite';
-const BASKET_KEY = 'basket';
+import { common } from './common';
+import { createSearch } from '../helpers/createMarkup';
 
 const search = document.querySelector('.js-search');
 const list = document.querySelector('.js-list');
 
-const favoriteArr = JSON.parse(localStorage.getItem(FAVORITE_KEY)) ?? [];
-const basketArr = JSON.parse(localStorage.getItem(BASKET_KEY)) ?? [];
+const favoriteArr = JSON.parse(localStorage.getItem(common.FAVORITE_KEY)) ?? [];
+const basketArr = JSON.parse(localStorage.getItem(common.BASKET_KEY)) ?? [];
 
 list.addEventListener('click', onClick);
 
-createSearch(items);
+createSearch(items, list);
 
 function onClick(e) {
   e.preventDefault();
@@ -21,25 +20,6 @@ function onClick(e) {
   validInfo(e);
   validFavorive(e);
   validBasket(e);
-}
-
-function createSearch(arrey) {
-  const markup = arrey
-    .map(
-      ({ id, title, image_url }) =>
-        `<li class="catalog-item js-card" data-id=${id}>
-          <img src="${image_url}" alt="${title}" width="600" />
-          <h2>${title}</h2>
-          <p><a class="js-info" href="#">More information</a></p>
-          <div>
-              <button class="js-favorite" >Add to favorite</button>
-              <button class="js-basket" >Add to basket</button>
-          </div>
-      </li>`
-    )
-    .join('');
-
-  list.innerHTML = markup;
 }
 
 function validInfo(evt) {
@@ -85,7 +65,7 @@ function validFavorive(evt) {
     }
 
     favoriteArr.push(product);
-    localStorage.setItem(FAVORITE_KEY, JSON.stringify(favoriteArr));
+    localStorage.setItem(common.FAVORITE_KEY, JSON.stringify(favoriteArr));
   }
 }
 
@@ -100,7 +80,7 @@ function validBasket(evt) {
     }
 
     basketArr.push(product);
-    localStorage.setItem(BASKET_KEY, JSON.stringify(basketArr));
+    localStorage.setItem(common.BASKET_KEY, JSON.stringify(basketArr));
   }
 }
 
