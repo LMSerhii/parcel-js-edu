@@ -17,10 +17,14 @@ createSearch(items, list);
 function onClick(e) {
   e.preventDefault();
 
+  if (e.currentTarget === e.target) {
+    return;
+  }
+
   const product = findProduct(e, items);
 
   if (e.target.classList.contains('js-info')) {
-    createModal(product, list);
+    createModal(product);
   }
   if (e.target.classList.contains('js-favorite')) {
     validFavorite(product);

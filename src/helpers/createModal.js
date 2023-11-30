@@ -1,6 +1,20 @@
 import * as basicLightbox from 'basiclightbox';
+import { closeModal } from './closeModal';
 
-function createModal(product, element) {
+function createModal(product) {
+  const options = {
+    handler: null,
+
+    onShow(instance) {
+      this.handler = closeModal.bind(instance);
+      document.addEventListener('keydown', this.handler);
+    },
+
+    onClose() {
+      document.removeEventListener('keydown', this.handler);
+    },
+  };
+
   const instance = basicLightbox.create(
     ` <div class="modal">
               <img src="${product.image_url}" alt="${
@@ -16,24 +30,10 @@ function createModal(product, element) {
                   <button class="js-basket" >Add to basket</button>
               </div>
           </div>`,
-    {
-      onShow: instance => {
-        element.addEventListener('keydown', handleElement);
-      },
-
-      onClose: instance => {
-        element.removeEventListener('keydown', handleElement);
-      },
-    }
+    options
   );
 
   instance.show();
-}
-
-function handleElement(event) {
-  if (event.code === 'Escape') {
-    instance.close();
-  }
 }
 
 function available(el) {

@@ -13,6 +13,10 @@ createSearch(storageData, list);
 list.addEventListener('click', onCloseClick);
 
 function onCloseClick(evt) {
+  if (evt.currentTarget === evt.target) {
+    return;
+  }
+
   const product = findProduct(evt, items);
 
   if (evt.target.classList.contains('js-close')) {
@@ -20,7 +24,7 @@ function onCloseClick(evt) {
   }
 
   if (evt.target.classList.contains('js-info')) {
-    createModal(product, list);
+    createModal(product);
   }
 }
 
