@@ -1,4 +1,5 @@
 import * as basicLightbox from 'basiclightbox';
+import { spinner } from './module_9/spnner';
 
 const box = document.querySelector('.js-box');
 const timeText = document.querySelector('.js-time');
@@ -142,10 +143,10 @@ function closeNotification(element) {
   |============================
 */
 
-console.log('Request data ...');
+// console.log('Request data ...');
 
 setTimeout(() => {
-  console.log('Preparing data ...');
+  // console.log('Preparing data ...');
 
   const data = {
     server: 'AWS',
@@ -161,7 +162,7 @@ setTimeout(() => {
 
 const promise = new Promise((resolve, reject) => {
   setTimeout(() => {
-    console.log('Prepering data ...');
+    // console.log('Prepering data ...');
 
     const data = {
       server: 'AWS',
@@ -187,13 +188,13 @@ promise
     return clientData;
   })
   .then(data => {
-    console.log('Modified', data);
+    // console.log('Modified', data);
   })
   .catch(err => {
-    console.error('Error', err);
+    // console.error('Error', err);
   })
   .finally(() => {
-    console.log('Finally');
+    // console.log('Finally');
   });
 
 const sleep = ms => {
@@ -207,19 +208,19 @@ const sleep = ms => {
 // sleep(6000).then(() => console.log('After 6 seconds'));
 
 Promise.all([sleep(2000), sleep(4000), sleep(6000)]).then(() => {
-  console.log('Completed all promises');
+  // console.log('Completed all promises');
 });
 
 function factorial(n) {
   if (n < 2) {
     return 1;
   }
-  console.log(n);
+  // console.log(n);
 
   return n * factorial(n - 1);
 }
 
-console.log(factorial(100005));
+// console.log(factorial(100005));
 
 function factorial(n) {
   let result = 1;
@@ -229,22 +230,24 @@ function factorial(n) {
   return result;
 }
 
-console.log(factorial(5));
+// console.log(factorial(5));
 
-console.log('1');
+// console.log('1');
 
-setTimeout(() => {
-  console.log('2');
-}, 2000);
+// setTimeout(() => {
+//   console.log('2');
+// }, 2000);
 
-setTimeout(() => {
-  Promise.resolve().then(() => {
-    console.log('3');
-  });
-}, 0);
+// setTimeout(() => {
+//   Promise.resolve().then(() => {
+//     console.log('3');
+//   });
+// }, 0);
 
-Promise.resolve().then(() => {
-  console.log('4');
-});
+// Promise.resolve().then(() => {
+//   console.log('4');
+// });
 
-console.log('5');
+// console.log('5');
+
+spinner();

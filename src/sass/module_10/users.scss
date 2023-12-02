@@ -1,0 +1,11 @@
+
+.user-list {
+    padding: 24px;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .user-list li:not(:last-child) {
+    margin-bottom: 16px;
+  }
+  
